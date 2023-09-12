@@ -12,8 +12,6 @@ export async function fetchBooks(query: string) {
   return books;
 }
 
-('https://www.googleapis.com/books/v1/volumes/BIyZzwEACAAJ');
-
 export async function bookLoader({ params }: LoaderFunctionArgs) {
   const response = await fetch('https://www.googleapis.com/books/v1/volumes/' + params.id);
   const books: GoogleResponse = await response.json();

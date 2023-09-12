@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/future-test-task',
+  base: '/',
   plugins: [react()],
   server: {
     watch: {

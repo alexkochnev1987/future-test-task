@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { BASE_URL, MAX_RESULTS } from '../constants/api';
+import { GOOGLE_URL, MAX_RESULTS } from '../constants/api';
 import { GoogleResponse } from '../types/googleResponse';
 import { LoaderFunctionArgs } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ export const googleBooksApi = {
     const startIndex = MAX_RESULTS * page;
 
     const { data } = await axios.get<GoogleResponse>(
-      `${BASE_URL}?q=intitle:${searchTerm}+subject:${category}&maxResults=${MAX_RESULTS}&startIndex=${startIndex}&orderBy=${sort}&key=${
+      `${GOOGLE_URL}?q=intitle:${searchTerm}+subject:${category}&maxResults=${MAX_RESULTS}&startIndex=${startIndex}&orderBy=${sort}&key=${
         import.meta.env.VITE_API_KEY
       }`
     );
@@ -23,7 +23,7 @@ export const googleBooksApi = {
     return data;
   },
   async getBook({ params }: LoaderFunctionArgs) {
-    const { data } = await axios.get(`${BASE_URL}/${params.id}`);
+    const { data } = await axios.get(`${GOOGLE_URL}/${params.id}`);
     return data;
   },
 };
