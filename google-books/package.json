@@ -1,4 +1,5 @@
 {
+  "homepage": "https://github.com/alexkochnev1987/future-test-task",
   "name": "google-books",
   "private": true,
   "version": "0.0.0",
@@ -8,28 +9,21 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "docker":"docker run --rm -it -d -p 3000:80/tcp --name site react-app",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "docker": "docker run --rm -it -d -p 3000:80/tcp --name site react-app",
     "docker:build": "docker build -t react-app .",
-    "docker:stop":"docker stop site"
+    "docker:stop": "docker stop site"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
-    "axios": "^1.5.0",
-    "bootstrap": "^5.3.1",
-    "react": "^18.2.0",
-    "react-bootstrap": "^2.8.0",
-    "react-dom": "^18.2.0",
-    "react-redux": "^8.1.2",
-    "react-router-dom": "^6.15.0",
-    "@types/react-dom": "^18.2.7",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5",
-
     "@types/react": "^18.2.21",
-
+    "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.4",
+    "axios": "^1.5.0",
+    "bootstrap": "^5.3.1",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
@@ -41,7 +35,16 @@
     "postcss": "^8.4.21",
     "prettier": "^2.7.1",
     "prettier-eslint": "^15.0.1",
-    "sass": "^1.66.1"
-
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.8.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.1.2",
+    "react-router-dom": "^6.15.0",
+    "sass": "^1.66.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   }
 }
