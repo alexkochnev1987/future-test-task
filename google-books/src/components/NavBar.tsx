@@ -13,6 +13,7 @@ export function NavBar() {
 
   const dispatch = useAppDispatch();
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleOnChange = (e: ChangeEvent<any>) => {
     const { name, value } = e.target;
 
